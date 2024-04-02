@@ -5,5 +5,5 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
-  background-size: contain;
+  background-size: 75%, 25%, 25%;
 }
