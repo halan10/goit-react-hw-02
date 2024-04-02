@@ -6,10 +6,10 @@ import Options from './components/Options/Options';
 import Notification from './components/Notification/Notification';
 
 function App() {
-  const [reviews, setRevies] = useState(() => {
-    const savedRevies = window.localStorage.getItem('reviews');
-    if (savedRevies !== null) {
-      return JSON.parse(savedRevies);
+  const [reviews, setReviews] = useState(() => {
+    const savedReviews = window.localStorage.getItem('reviews');
+    if (savedReviews !== null) {
+      return JSON.parse(savedReviews);
     }
     return { good: 0, neutral: 0, bad: 0 };
   });
@@ -21,13 +21,13 @@ function App() {
   const positive = Math.round((reviews.good / totalFeedback) * 100);
 
   const updateFeedback = feedbackTyp => {
-    setRevies({
+    setReviews({
       ...reviews,
       [feedbackTyp]: reviews[feedbackTyp] + 1,
     });
   };
   const resetFeedback = () => {
-    setRevies({
+    setReviews({
       ...reviews,
       good: 0,
       neutral: 0,
